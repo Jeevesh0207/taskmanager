@@ -17,12 +17,9 @@ const app = express();
 
 app.use(
   cors({
-    origin:'*',
-    methods: ["GET", "POST", "DELETE", "PUT"],
-    credentials: true,  // Allow credentials like cookies or authorization headers
+    origin: "*",
   })
 );
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -33,7 +30,9 @@ app.use(morgan("dev"));
 
 // Root Route to Display Message on Server
 app.get("/", (req, res) => {
-  res.send(`<h1 style="text-align: center; color: green;">🚀 Server is Running on Port ${PORT}</h1>`);
+  res.send(
+    `<h1 style="text-align: center; color: green;">🚀 Server is Running on Port ${PORT}</h1>`
+  );
 });
 
 app.use("/api", routes);
