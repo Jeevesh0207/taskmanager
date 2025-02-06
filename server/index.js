@@ -17,9 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.NODE_ENV === "production"
-      ? process.env.PROD_FRONTEND_URL  // Use production frontend URL
-      : process.env.CORS_ORIGIN,       // Use local development frontend URL
+    origin:'*',
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,  // Allow credentials like cookies or authorization headers
   })
