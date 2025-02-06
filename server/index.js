@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://taskmanager-ochre-two.vercel.app",
   })
 );
 
